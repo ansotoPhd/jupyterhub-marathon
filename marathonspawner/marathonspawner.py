@@ -264,6 +264,8 @@ class MarathonSpawner(Spawner):
             app_info = yield self.get_app_info(self.container_name)
             if app_info and app_info.tasks_healthy == 1:
                 ip, port = self.get_ip_and_port(app_info)
+                self.user.server.ip = ip
+                self.user.server.port = port
                 break
             yield gen.sleep(1)
         return (ip, port)

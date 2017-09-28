@@ -4,6 +4,11 @@ DEVELOPER
 
 · Proxy
     https://github.com/jupyterhub/configurable-http-proxy
+
+    API token of proxy:
+        JupyterHub.proxy_auth_token = '0bc02bede919e99a26de1e2a7a5aadfaf6228de836ec39a05a6c6942831d8fe5'
+    
+    curl -H "Authorization: token 0bc02bede919e99a26de1e2a7a5aadfaf6228de836ec39a05a6c6942831d8fe5" http://localhost:8001/api/routes
     
 · Marathon spawner
     https://github.com/vigsterkr/marathonspawner

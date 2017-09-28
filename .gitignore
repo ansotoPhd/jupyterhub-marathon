@@ -1,0 +1,6 @@
+
+jupyterhub.sqlite
+jupyterhub_cookie_secret
+.idea/
+__pycache__/
+
