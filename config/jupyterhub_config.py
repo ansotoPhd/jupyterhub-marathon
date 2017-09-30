@@ -5,8 +5,7 @@ c.JupyterHub.proxy_auth_token = '0bc02bede919e99a26de1e2a7a5aadfaf6228de836ec39a
 c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.hub_ip = '0.0.0.0'
 
-# Don't try to cleanup servers on exit - since in general for k8s, we want
-# the hub to be able to restart without losing user containers
+# Don't try to cleanup servers on exit
 c.JupyterHub.cleanup_servers = False
 
 c.MarathonSpawner.app_image = 'jupyterhub/singleuser:0.7.2'
