@@ -5,6 +5,8 @@ c.JupyterHub.proxy_auth_token = '0bc02bede919e99a26de1e2a7a5aadfaf6228de836ec39a
 c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.hub_ip = '0.0.0.0'
 
+c.JupyterHub.data_files_path = 'jupyterHubStaticData'
+
 # Don't try to cleanup servers on exit
 c.JupyterHub.cleanup_servers = False
 
