@@ -67,7 +67,7 @@ class MarathonSpawner(Spawner):
     ).tag(config=True)
 
     network_mode = Unicode(
-        'BRIDGE',
+        'HOST',
         help="Enum of BRIDGE or HOST"
         ).tag(config=True)
 
@@ -230,8 +230,7 @@ class MarathonSpawner(Spawner):
     def start(self):
         docker_container = MarathonDockerContainer(
             image=self.app_image,
-            network=self.network_mode,
-            port_mappings=self.get_port_mappings())
+            network=self.network_mode)#,port_mappings=self.get_port_mappings())
 
         app_container = MarathonContainer(
             docker=docker_container,
@@ -252,7 +251,8 @@ class MarathonSpawner(Spawner):
             container=app_container,
             constraints=self.get_constraints(),
             health_checks=self.get_health_checks(),
-            instances=1
+            instances=1,
+            ports=[0]
             )
 
         app = self.marathon.create_app(self.container_name, app_request)

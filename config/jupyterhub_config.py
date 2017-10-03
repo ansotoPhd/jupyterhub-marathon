@@ -10,7 +10,7 @@ c.JupyterHub.data_files_path = 'jupyterHubStaticData'
 # Don't try to cleanup servers on exit
 c.JupyterHub.cleanup_servers = False
 
-c.MarathonSpawner.app_image = 'jupyterhub/singleuser:0.7.2'
+c.MarathonSpawner.app_image = 'jupyter/notebook/singleuser:0.1.0'
 c.MarathonSpawner.app_prefix = 'jupyter'
 c.MarathonSpawner.marathon_host = 'http://localhost:8080'
 c.MarathonSpawner.ports = [8888]
