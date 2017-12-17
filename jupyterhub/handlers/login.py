@@ -15,6 +15,7 @@ class LogoutHandler(BaseHandler):
         user = self.get_current_user()
         if user:
             self.log.info("User logged out: %s", user.name)
+            user.stop()
             self.clear_login_cookie()
             for name in user.other_user_cookies:
                 self.clear_login_cookie(name)

@@ -49,9 +49,10 @@ class HomeHandler(BaseHandler):
         if user.running:
             # trigger poll_and_notify event in case of a server that died
             yield user.spawner.poll_and_notify()
-        html = self.render_template('home.html',
-            user=user,
-        )
+        if user.spawner and user.spawn_pending:
+            html = self.render_template('spawn_pending.html', user=user,)
+        else:
+            html = self.render_template('home.html', user=user,)
         self.finish(html)
 
 

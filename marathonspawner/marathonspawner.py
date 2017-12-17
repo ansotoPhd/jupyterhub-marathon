@@ -262,6 +262,7 @@ class MarathonSpawner(Spawner):
 
         while True:
             app_info = yield self.get_app_info(self.container_name)
+            self.state = app_info.tasks[0].state
             if app_info and app_info.tasks_healthy == 1:
                 ip, port = self.get_ip_and_port(app_info)
                 self.user.server.ip = ip
@@ -273,7 +274,7 @@ class MarathonSpawner(Spawner):
     @gen.coroutine
     def stop(self, now=False):
         try:
-            status = self.marathon.delete_app(self.container_name)
+            status = self.marathon.delete_app(self.container_name, force=True)
         except:
             self.log.error("Could not delete application %s", self.container_name)
             raise

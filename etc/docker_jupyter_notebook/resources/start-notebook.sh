@@ -6,6 +6,7 @@ set -e
 
 if [[ ! -z "${JPY_API_TOKEN}" ]]; then
   # launched by JupyterHub, use single-user entrypoint
+  sleep 60
   exec /usr/local/bin/start-singleuser.sh $*
 else
   . /usr/local/bin/start.sh jupyter notebook $*
