@@ -8,12 +8,12 @@ c.JupyterHub.port = 8000
 
 c.JupyterHub.data_files_path = 'jupyterHubStaticData'
 
-c.Authenticator.admin_users = {'astwin'}
+c.Authenticator.admin_users = {'asoriano'}
 
 # Don't try to cleanup servers on exit
 c.JupyterHub.cleanup_servers = True
 
-c.MarathonSpawner.app_image = 'jupyter/notebook/singleuser-sleep:0.1.0'
+#c.MarathonSpawner.app_image = 'jupyter/notebook/singleuser-sleep:0.1.0'
 #c.MarathonSpawner.app_image = 'kerberos/base:php7'
 #c.MarathonSpawner.app_image = 'jupyter/notebook/singleuser:0.1.0'
 c.MarathonSpawner.app_image = 'qa.stratio.com/stratio/analytic-environment:0.16.0'
@@ -27,8 +27,6 @@ c.MarathonSpawner.cpu_limit = 1
 
 c.Spawner.start_timeout = 900
 
-c.JupyterHub.slow_spawn_timeout = 0
-
 ##################################################################
 ####################                            ##################
 ####################     Gosec SSO Section      ##################
@@ -36,7 +34,7 @@ c.JupyterHub.slow_spawn_timeout = 0
 ##################################################################
 
 # The authenticator_class to be able to authenticate using Gosec-OAuth
-c.JupyterHub.authenticator_class = 'oauth_user.singlesignon.SingleSignOnOAuthenticator'
+#c.JupyterHub.authenticator_class = 'oauth_user.singlesignon.SingleSignOnOAuthenticator'
 # Authorization grant type
 c.SingleSignOnOAuthenticator.grant_type = 'authorization_code'
 # Permissions object key
