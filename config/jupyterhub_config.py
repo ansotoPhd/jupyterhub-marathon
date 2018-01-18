@@ -8,7 +8,7 @@ c.JupyterHub.port = 8000
 
 c.JupyterHub.data_files_path = 'jupyterHubStaticData'
 
-c.Authenticator.admin_users = {'asoriano'}
+c.Authenticator.admin_users = set()
 
 # Don't try to cleanup servers on exit
 c.JupyterHub.cleanup_servers = True
